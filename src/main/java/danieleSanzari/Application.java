@@ -7,6 +7,7 @@ import danieleSanzari.entities.Videogioco;
 import danieleSanzari.entities.enums.Genere;
 import danieleSanzari.entities.enums.Piattaforma;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
@@ -99,12 +100,18 @@ public class Application {
                     case 4 -> {
                         System.out.print("Prezzo max: ");
                         double maxPrezzo = Double.parseDouble(scan.nextLine());
-                        collezioneGiochi.ricercaPerPrezzo(maxPrezzo).forEach(gioco -> System.out.println(gioco.getPrezzo()));
+                        collezioneGiochi.ricercaPerPrezzo(maxPrezzo)
+                                .forEach(System.out::println);
                     }
                     case 5 -> {
-                        System.out.print("Numero giocatori: ");
-                        int num = Integer.parseInt(scan.nextLine());
-                        collezioneGiochi.ricercaPerNumeroGiocatori(num).forEach(gioco -> System.out.println(gioco.getNumeroGiocatori()));
+                        System.out.print("Numero di giocatori: ");
+                        int numero = Integer.parseInt(scan.nextLine());
+                        List<Gioco> giochiCompatibili = collezioneGiochi.ricercaPerNumeroGiocatori(numero);
+                        if (giochiCompatibili.isEmpty()) {
+                            System.out.println("Nessun gioco da tavolo trovato per " + numero + " giocatori.");
+                        } else {
+                            giochiCompatibili.forEach(System.out::println);
+                        }
                     }
                     case 6 -> {
                         System.out.print("ID: ");

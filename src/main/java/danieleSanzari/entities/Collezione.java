@@ -30,7 +30,7 @@ public class Collezione {
                 .collect(Collectors.toList());
     }
 
-    public List<GiocoDaTavolo> ricercaPerNumeroGiocatori(int numero) {
+    public List<Gioco> ricercaPerNumeroGiocatori(int numero) {
         return mapGiochi.values().stream()
                 .filter(gioco -> gioco instanceof GiocoDaTavolo)
                 .map(gioco -> (GiocoDaTavolo) gioco)
