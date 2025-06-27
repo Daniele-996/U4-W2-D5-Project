@@ -42,7 +42,7 @@ public class Videogioco extends Gioco {
 
     @Override
     public String toString() {
-        return "Videogioco{" +
+        return "Videogioco {" +
                 "durataGioco=" + durataGioco +
                 ", piattaforma=" + piattaforma +
                 ", genere=" + genere +
