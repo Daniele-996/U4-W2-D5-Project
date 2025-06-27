@@ -6,6 +6,14 @@ import java.util.stream.Collectors;
 public class Collezione {
     private Map<Integer, Gioco> mapGiochi = new HashMap<>();
 
+    public Map<Integer, Gioco> getMapGiochi() {
+        return mapGiochi;
+    }
+
+    public void setMapGiochi(Map<Integer, Gioco> mapGiochi) {
+        this.mapGiochi = mapGiochi;
+    }
+
     public void aggiungiGioco(Gioco gioco) {
         if (mapGiochi.containsKey(gioco.getId())) throw new IllegalArgumentException("Id già esistente.");
         mapGiochi.put(gioco.getId(), gioco);

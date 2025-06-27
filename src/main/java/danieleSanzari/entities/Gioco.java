@@ -7,7 +7,7 @@ public abstract class Gioco {
     protected double prezzo;
 
     public Gioco(int Id, String titolo, int anno, double prezzo) {
-        if (prezzo < 0) throw new IllegalArgumentException("Prezzo deve essere un numero maggiore di 0");
+        if (prezzo <= 0) throw new IllegalArgumentException("Prezzo deve essere un numero maggiore di 0");
         this.Id = Id;
         this.titolo = titolo;
         this.anno = anno;
@@ -45,10 +45,10 @@ public abstract class Gioco {
     @Override
     public String toString() {
         return "Gioco {" +
-                "anno=" + anno +
+                "titolo='" + titolo +
                 ", Id=" + Id +
-                ", titolo='" + titolo + '\'' +
-                ", prezzo=" + prezzo +
+                ", anno=" + anno +
+                ", prezzo=" + prezzo + '\'' +
                 '}';
     }
 }

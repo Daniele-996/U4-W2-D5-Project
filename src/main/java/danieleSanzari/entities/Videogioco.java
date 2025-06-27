@@ -43,13 +43,13 @@ public class Videogioco extends Gioco {
     @Override
     public String toString() {
         return "Videogioco {" +
-                "durataGioco=" + durataGioco +
+                "titolo='" + titolo +
+                ", Id=" + Id +
+                ", anno=" + anno +
+                ", prezzo=" + prezzo +
                 ", piattaforma=" + piattaforma +
                 ", genere=" + genere +
-                ", anno=" + anno +
-                ", Id=" + Id +
-                ", prezzo=" + prezzo +
-                ", titolo='" + titolo + '\'' +
+                ", durataGioco=" + durataGioco + '\'' +
                 '}';
     }
 }
